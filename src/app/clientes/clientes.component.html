@@ -6,7 +6,7 @@
     <li *ngFor="let cliente of clientes; let idx = index" [id]="idx">
       <div class="cliente">
         <div class="actions">
-          <a href="/editar/{{idx}}"><i class="material-icons">edit</i>Editar</a>
+          <a routerLink="/editar/{{idx}}"><i class="material-icons">edit</i>Editar</a>
           <button (click)="delete(idx)"><i class="material-icons">delete_forever</i>Excluir</button>
         </div>
         <div class="dadospessoais">
