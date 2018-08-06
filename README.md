@@ -2,7 +2,7 @@
 
 <br>
 
-###Cadastro de clientes
+### Cadastro de clientes
 
 Fazer uma aplicação web usando Angular versão 6 com um CRUD simples salvando em localstorage. <br>
 O aplicativo deverá ter uma tela de listagem, uma tela de cadastro e uma tela de editar. <br>
