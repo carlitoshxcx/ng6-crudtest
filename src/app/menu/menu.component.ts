@@ -9,12 +9,11 @@ import { Router, NavigationEnd } from '@angular/router';
 
 export class MenuComponent implements OnInit {
 
-  public navUrl: string;
+  navUrl: string = '';
 
   constructor(private router: Router) { 
     router.events.subscribe((_: NavigationEnd) => {
-      this.navUrl = _.url
-      console.log("navUrl: ", this.navUrl);
+      if (_.url !== undefined) { this.navUrl = _.url }
     } );
   }
 
