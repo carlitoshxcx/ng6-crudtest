@@ -1,0 +1,78 @@
+<div id="cadastro">
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+
+    <div class="dadospessoais" formGroupName="dadospessoais">
+      <div class="input">
+        <div class="nome">
+          <label for="nome">Nome do Cliente:</label>
+          <input formControlName="nome" required>
+        </div>
+      </div>
+      <div class="input">
+        <div class="cpf">
+          <label for="cpf">CPF:</label>
+          <input formControlName="cpf" required>
+        </div>
+        <div class="datadenascimento">
+          <label for="datadenascimento">Data de Nascimento:</label>
+          <input formControlName="datadenascimento" required>
+        </div>
+      </div>
+      <div class="input">
+        <div class="endereco">
+          <label for="endereco">Endereço:</label>
+          <input formControlName="endereco" required>
+        </div>
+      </div>
+    </div>
+    <hr>    
+
+    <div class="dadosveiculo" formGroupName="dadosveiculo">
+      <div class="select">
+        <label for="tipos">Tipo do veículo:</label>
+        <select (change)="selectChanged($event)" formControlName="tipo" id="tipo" required>
+          <option *ngFor="let tipo of tipos$" [value]="tipo.codigo">{{ tipo.nome }}</option>
+        </select>
+      </div>
+      <div class="select">
+        <label for="marcas">Marca:</label>
+        <select (change)="selectChanged($event)" formControlName="marca" id="marca" required>
+          <option *ngFor="let marca of marcas$" [value]="marca.codigo">{{ marca.nome }}</option>
+        </select>
+      </div>
+      <div class="select">
+        <label for="modelos">Modelo:</label>
+        <select (change)="selectChanged($event)" formControlName="modelo" id="modelo" required>
+          <option *ngFor="let modelo of modelos$" [value]="modelo.codigo">{{ modelo.nome }}</option>
+        </select>
+      </div>
+      <div class="select">
+        <label for="anos">Ano:</label>
+        <select (change)="selectChanged($event)" formControlName="ano" id="ano" required>
+          <option *ngFor="let ano of anos$" [value]="ano.codigo">{{ ano.nome }}</option>
+        </select>
+      </div>
+    </div>
+    
+    <div *ngIf="veiculo$.Marca">
+      <hr>
+      <div class="info">Dados do veículo:</div>
+      <div class="veiculoselecionado">
+        <ul>
+          <li><span class="nome">Marca</span><span class="value">{{ veiculo$.Marca }}</span></li>
+          <li><span class="nome">Modelo</span><span class="value">{{ veiculo$.Modelo }}</span></li>
+          <li><span class="nome">Ano</span><span class="value">{{ veiculo$.AnoModelo }}</span></li>
+          <li><span class="nome">Combustível</span><span class="value">{{ veiculo$.Combustivel }}</span></li>
+          <li><span class="nome">Código Fipe</span><span class="value">{{ veiculo$.CodigoFipe }}</span></li>
+          <li><span class="nome">Valor</span><span class="value">{{ veiculo$.Valor }}</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="controles">
+      <button type="reset" (click)="resetForm()"><i class="material-icons">clear_all</i>Limpar</button>
+      <button type="submit" [disabled]="!cadastroForm.valid || !veiculo$.Marca"><i class="material-icons">check_circle</i>Salvar</button>
+    </div>
+
+  </form>
+</div>

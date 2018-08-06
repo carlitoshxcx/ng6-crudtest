@@ -1,0 +1,16 @@
+<nav [class.pageactive]="navUrl != '/'">
+    <ul>
+      <li>
+        <a routerLink="clientes" [class.selected]="navUrl == '/clientes'">
+          <i class="material-icons">directions_car</i>
+          <span>Clientes</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="cadastro" [class.selected]="navUrl == '/cadastro'">
+          <i class="material-icons">add_circle</i>
+          <span>Cadastrar um novo veículo</span>
+        </a>
+      </li>
+    </ul>
+</nav>
