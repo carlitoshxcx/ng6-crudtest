@@ -1,0 +1,135 @@
+#cadastro {
+    hr {
+        width: 99%;
+        height: 1px;
+        background: #6398c4;
+        margin: 20px 0px 20px 0px;
+        border: none;
+    }
+    .info {
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    .dadospessoais {
+        .input {
+            margin: 0 0 15px 0;
+
+            label {  font-size: 20px; }
+            input {
+                width: 95%;
+                height: 25px;
+                padding: 0 2%;
+                color: #062945;
+                border: none;
+                border-radius: 3px;
+            }
+            // .nome {}
+            .cpf,
+            .datadenascimento {
+                width: 48%;
+                display: inline-block;
+                
+                input {
+                    text-align: center;
+                    display: block;
+                }
+            }
+            .cpf { margin-right: 3.4%; }
+            // .endereco {}
+        }
+    }
+
+    .dadosveiculo {
+        .select {
+            width: 25%;
+            display: inline-block;
+
+            label {  font-size: 20px; }
+            select {  width: 93%; }
+        }
+    }
+
+    .veiculoselecionado {
+        background: #104671;
+        border-radius: 3px;
+        margin: 0px 0px;
+        padding: 10px 0px;
+        transition: all 0.5s;
+    
+        ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+                    
+            li {
+                width: 32.4%;
+                margin: 5px 0px;
+                padding: 0px;
+                list-style: none;
+                text-align: center;
+                vertical-align: text-top;
+                display: inline-block;
+
+                // .nome,
+                // .value {}
+
+                .nome {
+                    font-size: 16px;
+                    display: block;
+                }
+                .value {
+                    font-size: 20px;
+                    color: #fff77e;
+                }
+            }
+        }
+    }
+
+    .controles {
+        text-align: center;
+
+        button {
+            width: 160px;
+            background: #2e6fa4;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            padding: 0px 15px 0px 10px;
+            margin: 30px 30px 10px 30px;
+            text-decoration:none;
+            font-family: 'teko';
+            font-size: 20px;
+            line-height: 45px;
+            display: inline-block;
+            transition: all 0.5s;
+            cursor: pointer;
+            
+            .material-icons {
+                margin-right: 5px;
+                line-height: 26px;
+                vertical-align: text-top;
+            }
+
+            &:disabled {
+                &, &:hover {
+                    border: 1px solid #2f5371;
+                }
+                &, & *, &:hover, &:hover * {
+                    background: #2e6fa4;
+                    color: #2f5371; 
+                    cursor: not-allowed;
+                }
+            }
+            
+            &:hover {
+                background: #0f4f83;
+                border: 1px solid #0e4877;
+            }
+            
+            &:hover, &:hover * {  
+                transition: all 0.7s;
+                color: #fff77e; 
+            }
+        }
+    }
+}

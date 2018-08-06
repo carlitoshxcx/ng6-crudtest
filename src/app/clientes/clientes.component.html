@@ -1,0 +1,57 @@
+<div id="clientes">
+  <div *ngIf="!clientes[0]" class="semclientes">
+    <p>Não há clientes cadastrados.</p>
+  </div>
+  <ul *ngIf="clientes[0]">
+    <li *ngFor="let cliente of clientes; let idx = index" [id]="idx">
+      <div class="cliente">
+        <div class="actions">
+          <a href="/editar/{{idx}}"><i class="material-icons">edit</i>Editar</a>
+          <button (click)="delete(idx)"><i class="material-icons">delete_forever</i>Excluir</button>
+        </div>
+        <div class="dadospessoais">
+          <ul>
+            <li><span class="nome">Nome:</span><span class="value">{{ cliente.dadospessoais.nome }}</span></li>
+            <li><span class="nome">CPF:</span><span class="value">{{ cliente.dadospessoais.cpf | mask: '000.000.000-00'}}</span></li>
+            <li><span class="nome">Data de Nascimento:</span><span class="value">{{ cliente.dadospessoais.datadenascimento | mask: '00/00/0000'}}</span></li>
+            <li><span class="nome">Endereco:</span><span class="value">{{ cliente.dadospessoais.endereco }}</span></li>
+          </ul>
+        </div>
+        <!-- <div class="dadosveiculo">
+          <ul>
+            <li><span class="nome">Tipo:</span><span class="value">{{ cliente.dadosveiculo.tipo }}</span></li>
+            <li><span class="nome">Marca:</span><span class="value">{{ cliente.dadosveiculo.marca }}</span></li>
+            <li><span class="nome">Modelo:</span><span class="value">{{ cliente.dadosveiculo.modelo }}</span></li>
+            <li><span class="nome">Ano:</span><span class="value">{{ cliente.dadosveiculo.ano }}</span></li>
+          </ul>
+        </div> -->
+        <div class="veiculo">
+          <ul>
+            <li>
+              <span class="nome">Marca:</span><span class="value">{{ cliente.veiculo.Marca }}</span>
+            </li>
+            <li>
+              <span class="nome">Modelo:</span><span class="value">{{ cliente.veiculo.Modelo }}</span>
+            </li>
+            <li>
+              <span class="nome">Ano:</span>
+              <span class="value">{{ cliente.veiculo.AnoModelo }}</span>
+            </li>
+            <li>
+              <span class="nome">Combustível:</span>
+              <span class="value">{{ cliente.veiculo.Combustivel }}</span>
+            </li>
+            <li>
+              <span class="nome">Código Fipe:</span>
+              <span class="value">{{ cliente.veiculo.CodigoFipe }}</span>
+            </li>
+            <li>
+              <span class="nome">Valor:</span>
+              <span class="value">{{ cliente.veiculo.Valor }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

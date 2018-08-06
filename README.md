@@ -1,27 +1,26 @@
 # Ng6Crudtest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
+<br>
 
-## Development server
+### Cadastro de clientes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Fazer uma aplicação web usando Angular versão 6 com um CRUD simples salvando em localstorage. <br>
+O aplicativo deverá ter uma tela de listagem, uma tela de cadastro e uma tela de editar. <br>
+O delete pode ser feito a partir da própria listagem. <br>
+O cadastro deverá ser de um cliente com as seguintes informações:<br>
 
-## Code scaffolding
+	- Nome
+	- CPF
+	- Data de nascimento
+	- Endereço
+	- Veículo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+O veículo deverá ser escolhido a partir de uma combo box, que deverá buscar a listagem de veículos (marca e modelo) a partir de uma api pública: https://deividfortuna.github.io/fipe/
 
-## Build
+A tela de novo cliente deverá ser um formulário com validações nos campos de cpf e todos os campos deverão ser obrigatórios. A edição pode ser na mesma tela de cadastro, mas deverá ter as mesmas validações.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<br>
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Server
+Execute `ng serve -o` no terminal. <br>
+O App será exibido no endereço `http://localhost:4200/`.
