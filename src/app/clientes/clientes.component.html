@@ -12,8 +12,8 @@
         <div class="dadospessoais">
           <ul>
             <li><span class="nome">Nome:</span><span class="value">{{ cliente.dadospessoais.nome }}</span></li>
-            <li><span class="nome">CPF:</span><span class="value">{{ cliente.dadospessoais.cpf }}</span></li>
-            <li><span class="nome">Data de Nascimento:</span><span class="value">{{ cliente.dadospessoais.datadenascimento }}</span></li>
+            <li><span class="nome">CPF:</span><span class="value">{{ cliente.dadospessoais.cpf | mask: '000.000.000-00'}}</span></li>
+            <li><span class="nome">Data de Nascimento:</span><span class="value">{{ cliente.dadospessoais.datadenascimento | mask: '00/00/0000'}}</span></li>
             <li><span class="nome">Endereco:</span><span class="value">{{ cliente.dadospessoais.endereco }}</span></li>
           </ul>
         </div>

@@ -117,6 +117,9 @@ export class CadastroComponent implements OnInit {
     }
   }
 
+  inputCpf($event){}
+  inputData($event){}
+
   onSubmit() {
     const result: Cadastro = Object.assign({}, this.cadastroForm.value);
     
@@ -153,14 +156,14 @@ export class Cadastro {
 
 export class DadosPessoais {
   constructor(dadospessoais: any = {}){
-    this.nome = [(dadospessoais.nome || ''), Validators.compose([Validators.minLength(5), Validators.required]) ];
-    this.cpf = [(dadospessoais.cpf || ''), Validators.compose([Validators.minLength(5), Validators.required]) ];
-    this.datadenascimento = [(dadospessoais.datadenascimento || ''), Validators.compose([Validators.minLength(5), Validators.required]) ];
+    this.nome = [(dadospessoais.nome || ''), Validators.compose([Validators.minLength(4), Validators.required]) ];
+    this.cpf = [(dadospessoais.cpf || ''), Validators.compose([Validators.minLength(11), Validators.required]) ];
+    this.datadenascimento = [(dadospessoais.datadenascimento || ''), Validators.compose([Validators.minLength(8), Validators.required]) ];
     this.endereco = [(dadospessoais.endereco || ''), Validators.compose([Validators.minLength(5), Validators.required]) ];
   }
-  nome: any = ['', Validators.compose([Validators.minLength(5), Validators.required]) ];
-  cpf: any = ['', Validators.compose([Validators.minLength(5), Validators.required]) ];
-  datadenascimento: any = ['', Validators.compose([Validators.minLength(5), Validators.required]) ];
+  nome: any = ['', Validators.compose([Validators.minLength(4), Validators.required]) ];
+  cpf: any = ['', Validators.compose([Validators.minLength(11), Validators.required]) ];
+  datadenascimento: any = ['', Validators.compose([Validators.minLength(8), Validators.required]) ];
   endereco: any = ['', Validators.compose([Validators.minLength(5), Validators.required]) ];
 }
 

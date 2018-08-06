@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StorageServiceModule } from "angular-webstorage-service";
+import { NgxMaskModule } from "ngx-mask";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { ClientesComponent } from './clientes/clientes.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule, 
-    StorageServiceModule
+    StorageServiceModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
